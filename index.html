@@ -1,46 +1,69 @@
 ---
-# This empty block tells GitHub Pages to fill the page with content from _data/roadmap.yml
+# This block tells GitHub Pages to fill the page with content from _data/roadmap.yml
 ---
 {% assign r = site.data.roadmap %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ r.name }} – Roadmap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{{ r.name }}'s PM Roadmap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-    <header>
-      <h1>{{ r.name }}</h1>
-      <p class="headline">{{ r.headline }}</p>
-    </header>
+<div class="wrap">
+  <header class="tb" aria-label="Document details">
+    <div><span class="k">Name</span><span class="v">{{ r.name }}</span></div>
+    <div><span class="k">Subject</span><span class="v">{{ r.subject }}</span></div>
+    <div><span class="k">Plan</span><span class="v" id="tb-plan">-</span></div>
+    <div><span class="k">Last update</span><span class="v" id="tb-upd">-</span></div>
+  </header>
 
-    <section>
-      <h2>What I'm learning</h2>
-      {% for area in r.learning %}
-      <div class="area">
-        <h3>{{ area.title }}</h3>
-        <ul>
-          {% for item in area.topics %}
-          <li><span class="status {{ item.status }}">{{ item.status | replace: "-", " " }}</span> {{ item.name }}</li>
-          {% endfor %}
-        </ul>
+  <section class="hero">
+    <h1>{{ r.headline }}</h1>
+    <p class="lede">{{ r.intro }}</p>
+  </section>
+
+  <section class="plan" aria-labelledby="plan-h">
+    <h2 id="plan-h" class="sr">Plan progress</h2>
+    <div class="ruler" id="ruler" role="img"></div>
+    <p class="stat" id="stat"></p>
+    <div class="meters" id="meters"></div>
+  </section>
+
+  <section class="tlwrap" aria-labelledby="tl-h">
+    <h2 id="tl-h" class="sr">Timeline</h2>
+    <div class="bar">
+      <div class="chips" role="group" aria-label="Filter by pillar">
+        <button class="chip" type="button" data-f="all" aria-pressed="true">All</button>
+        <button class="chip" type="button" data-f="ai" aria-pressed="false">AI</button>
+        <button class="chip" type="button" data-f="pm" aria-pressed="false">Product</button>
       </div>
-      {% endfor %}
-    </section>
+      <ul class="legend" aria-label="Legend">
+        <li><span class="dot s-done" style="--c1:var(--ink);--c2:var(--ink)"></span>Done</li>
+        <li><span class="dot s-doing" style="--c1:var(--ink);--c2:var(--ink)"></span>In progress</li>
+        <li><span class="dot s-planned" style="--c1:var(--ink);--c2:var(--ink)"></span>Planned</li>
+        <li><span class="sw ai"></span>AI</li>
+        <li><span class="sw pm"></span>Product</li>
+        <li><span class="sw both"></span>Both</li>
+        <li><span class="sw base"></span>Background</li>
+      </ul>
+    </div>
+    <p class="count" id="count" aria-live="polite"></p>
+    <ol class="tl" id="tl"></ol>
+  </section>
 
-    <section>
-      <h2>Projects</h2>
-      {% for p in r.projects %}
-      <article class="project">
-        <h3>{% if p.link %}<a href="{{ p.link }}">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}</h3>
-        <p>{{ p.description }}</p>
-        <p class="date">{{ p.date }}</p>
-      </article>
-      {% endfor %}
-    </section>
-  </main>
+  <footer class="foot">
+    <span>{{ r.footer }}</span>
+    <span id="upd"></span>
+  </footer>
+</div>
+
+<!-- The content from _data/roadmap.yml, handed to roadmap.js -->
+<script id="roadmap-data" type="application/json">{{ r | jsonify }}</script>
+<script src="roadmap.js"></script>
 </body>
 </html>

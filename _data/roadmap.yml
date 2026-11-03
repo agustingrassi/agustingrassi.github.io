@@ -1,28 +1,147 @@
 # ─────────────────────────────────────────────────────────────
 #  YOUR CONTENT LIVES HERE
 #  Edit this file to update the page. No HTML needed.
-#  Rules: keep the indentation (2 spaces), and wrap text
-#  in quotes if it contains a colon (:).
+#  Rules:
+#   - Keep the indentation (2 spaces).
+#   - Wrap text in "quotes".
+#   - Dates go in quotes too, as "YYYY-MM-DD".
 # ─────────────────────────────────────────────────────────────
 
-name: "Agustin Grassi"
-headline: "Industrial engineer pivoting to Product Management with a strong AI foundation."
+# Top of the page
+name: "Agustin"
+subject: "Roadmap to product management"
+headline: "Industrial engineer becoming a product manager, building with AI in public."
+intro: "I'm moving into product management by building real things, with AI as a core skill and tool. This page is the log: what I shipped, what I decided, and what comes next."
+footer: "Roadmap v1 · Built with Claude"
 
-# The topics you're learning. Add topics under each one.
-# status can be: done, in-progress, next
-learning:
-  - title: "AI"
-    topics:
-      - name: "GitHub basics: repos, branches, pull requests"
-        status: done
-  - title: "Product Management"
-    topics:
-      - name: "Shipping a first product: this page"
-        status: in-progress
+# The plan window (drives the progress bar and "Day X of Y")
+plan:
+  start: "2026-10-01"
+  end: "2027-04-30"
 
-# Things you've built.
-projects:
-  - name: "Roadmap page"
-    description: "This page. Built from scratch and published with GitHub Pages."
-    date: "Nov 2026"
-    link: "https://agustingrassi.github.io"
+# ─────────────────────────────────────────────────────────────
+#  TIMELINE ENTRIES
+#  Copy an entry, paste it, and change the values.
+#
+#  date:    "YYYY-MM-DD"  (used to sort; not needed for earlier: true)
+#  when:    the label shown, e.g. "Nov 2026"
+#  status:  done | doing | planned
+#  type:    decision | deliverable | learning | teardown | impact | feedback | badge
+#  pillars: one or two of [ai, pm, base]   (base = background)
+#  title / text: what it is
+#
+#  Optional:
+#  earlier: true          → shows under "Before the plan"
+#  metric: "a result in numbers"
+#  link:
+#    label: "See it"
+#    url: "https://..."
+# ─────────────────────────────────────────────────────────────
+
+entries:
+
+  # Before the plan
+  - earlier: true
+    when: "Earlier"
+    status: done
+    type: impact
+    pillars: [base]
+    title: "First employee at a startup"
+    text: "Joined a startup as its first employee."
+
+  - earlier: true
+    when: "Earlier"
+    status: done
+    type: impact
+    pillars: [base]
+    title: "Production tracking system at a factory"
+    text: "At a mid-sized factory, improved processes and designed and programmed a system to keep a record of the production process."
+
+  # The plan
+  - date: "2026-10-27"
+    when: "Oct 2026"
+    status: done
+    type: decision
+    pillars: [pm]
+    title: "Chose product management"
+    text: "Decided to move from industrial engineering into product management, and wrote a plan to April 2027 around two pillars: AI and product management."
+
+  - date: "2026-11-03"
+    when: "3 Nov 2026"
+    status: done
+    type: decision
+    pillars: [ai, pm]
+    title: "Build first, learn as needed"
+    text: "Start real projects now and study each concept when a project needs it, instead of finishing a course first."
+
+  - date: "2026-11-03"
+    when: "3 Nov 2026"
+    status: done
+    type: deliverable
+    pillars: [ai, pm]
+    title: "Roadmap page, first version"
+    text: "This page. Built in one session with Claude, with every entry stored as data so adding a milestone takes a few lines."
+
+  - date: "2026-11-03"
+    when: "Nov 2026"
+    status: doing
+    type: learning
+    pillars: [ai]
+    title: "AI concepts, learned by building"
+    text: "Learn each AI concept when a project needs it, and publish a short note on what I learned."
+
+  - date: "2026-12-05"
+    when: "Dec 2026"
+    status: planned
+    type: learning
+    pillars: [pm]
+    title: "PM fundamentals, learned by building"
+    text: "Learn the basics each project calls for, such as prioritization, roadmaps, and writing a product requirements document. Short notes go on this page."
+
+  - date: "2026-12-20"
+    when: "Dec 2026"
+    status: planned
+    type: deliverable
+    pillars: [ai]
+    title: "First AI agent in use"
+    text: "An agent that solves a real problem from my own routine, with a short write-up of the choices I made."
+
+  - date: "2027-01-10"
+    when: "Jan 2027"
+    status: planned
+    type: teardown
+    pillars: [pm]
+    title: "First product teardown"
+    text: "A one-page analysis of a real product: who it is for, what works, and what I would change."
+
+  - date: "2027-01-25"
+    when: "Jan 2027"
+    status: planned
+    type: feedback
+    pillars: [ai, pm]
+    title: "A project tested with real users"
+    text: "Three people use something I built. Their feedback, and what I changed because of it, goes on this page."
+
+  - date: "2027-02-15"
+    when: "Feb 2027"
+    status: planned
+    type: impact
+    pillars: [pm]
+    title: "Factory system as a product case"
+    text: "Retell the production tracking system as a product case: the problem, the users, the trade-offs, and the results."
+
+  - date: "2027-03-10"
+    when: "Mar 2027"
+    status: planned
+    type: feedback
+    pillars: [pm]
+    title: "Conversations with working PMs"
+    text: "Talk with product managers about the role and the market, and record what I learn and what changes in my plan."
+
+  - date: "2027-04-01"
+    when: "Apr 2027"
+    status: planned
+    type: decision
+    pillars: [pm]
+    title: "Start the job search in Barcelona"
+    text: "Begin looking for product manager roles in Barcelona, in person."
