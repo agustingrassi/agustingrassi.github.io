@@ -1,16 +1,46 @@
+---
+# This empty block tells GitHub Pages to fill the page with content from _data/roadmap.yml
+---
+{% assign r = site.data.roadmap %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Agustin Grassi – Roadmap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ r.name }} – Roadmap</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Agustin Grassi</h1>
-  <p>Industrial engineer pivoting to Product Management with a strong AI foundation.</p>
-  <h2>What I'm learning</h2>
-  <ul>
-    <li>AI</li>
-    <li>Product Management</li>
-  </ul>
+  <main>
+    <header>
+      <h1>{{ r.name }}</h1>
+      <p class="headline">{{ r.headline }}</p>
+    </header>
+
+    <section>
+      <h2>What I'm learning</h2>
+      {% for area in r.learning %}
+      <div class="area">
+        <h3>{{ area.title }}</h3>
+        <ul>
+          {% for item in area.topics %}
+          <li><span class="status {{ item.status }}">{{ item.status | replace: "-", " " }}</span> {{ item.name }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      {% for p in r.projects %}
+      <article class="project">
+        <h3>{% if p.link %}<a href="{{ p.link }}">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}</h3>
+        <p>{{ p.description }}</p>
+        <p class="date">{{ p.date }}</p>
+      </article>
+      {% endfor %}
+    </section>
+  </main>
 </body>
 </html>

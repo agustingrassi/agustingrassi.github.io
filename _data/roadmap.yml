@@ -1,0 +1,28 @@
+# ─────────────────────────────────────────────────────────────
+#  YOUR CONTENT LIVES HERE
+#  Edit this file to update the page. No HTML needed.
+#  Rules: keep the indentation (2 spaces), and wrap text
+#  in quotes if it contains a colon (:).
+# ─────────────────────────────────────────────────────────────
+
+name: "Agustin Grassi"
+headline: "Industrial engineer pivoting to Product Management with a strong AI foundation."
+
+# The topics you're learning. Add topics under each one.
+# status can be: done, in-progress, next
+learning:
+  - title: "AI"
+    topics:
+      - name: "GitHub basics: repos, branches, pull requests"
+        status: done
+  - title: "Product Management"
+    topics:
+      - name: "Shipping a first product: this page"
+        status: in-progress
+
+# Things you've built.
+projects:
+  - name: "Roadmap page"
+    description: "This page. Built from scratch and published with GitHub Pages."
+    date: "Nov 2026"
+    link: "https://agustingrassi.github.io"
