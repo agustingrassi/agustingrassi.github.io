@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agustin Grassi – Roadmap</title>
+  <style>/* ─────────────────────────────────────────────
+   YOUR DESIGN LIVES HERE
+   Colors and fonts are set once at the top.
+   ───────────────────────────────────────────── */
+
+:root {
+  --bg: #fafaf9;
+  --text: #1c1917;
+  --muted: #78716c;
+  --accent: #2563eb;
+  --card: #ffffff;
+  --border: #e7e5e4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1917;
+    --text: #f5f5f4;
+    --muted: #a8a29e;
+    --accent: #60a5fa;
+    --card: #292524;
+    --border: #44403c;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 16px;
+}
+
+h1 { font-size: 2rem; margin: 0; }
+h2 { font-size: 1.25rem; margin-top: 48px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+h3 { font-size: 1rem; margin: 16px 0 4px; }
+
+.headline { color: var(--muted); margin-top: 8px; }
+
+ul { list-style: none; padding: 0; margin: 0; }
+li { padding: 6px 0; }
+
+a { color: var(--accent); }
+
+.status {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 1px 8px;
+  border-radius: 999px;
+  margin-right: 8px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  text-transform: capitalize;
+}
+.status.done { color: #16a34a; border-color: #16a34a; }
+.status.in-progress { color: var(--accent); border-color: var(--accent); }
+
+.project {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 4px 16px 8px;
+  margin-top: 12px;
+}
+.project p { margin: 4px 0; }
+.date { color: var(--muted); font-size: 0.875rem; }
+
+.cta {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 18px;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+.cta:hover { opacity: .9; }
+</style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Agustin Grassi</h1>
+      <p class="headline">Industrial engineer pivoting to Product Management with a strong AI foundation.</p>
+      <a class="cta" href="/roadmap2/">See my full roadmap &rarr;</a>
+    </header>
+
+    <section>
+      <h2>What I'm learning</h2>
+      
+      <div class="area">
+        <h3>AI</h3>
+        <ul>
+          
+          <li><span class="status done">done</span> GitHub basics: repos, branches, pull requests</li>
+          
+        </ul>
+      </div>
+      
+      <div class="area">
+        <h3>Product Management</h3>
+        <ul>
+          
+          <li><span class="status in-progress">in progress</span> Shipping a first product: this page</li>
+          
+        </ul>
+      </div>
+      
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      
+      <article class="project">
+        <h3><a href="/roadmap2/">Roadmap page</a></h3>
+        <p>My plan and progress toward product management, as a timeline. Built with Claude and published with GitHub Pages.</p>
+        <p class="date">Nov 2026</p>
+      </article>
+      
+    </section>
+  </main>
+</body>
+</html>

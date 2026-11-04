@@ -15,6 +15,7 @@
     <header>
       <h1>{{ r.name }}</h1>
       <p class="headline">{{ r.headline }}</p>
+      {% if r.roadmap_link %}<a class="cta" href="{{ r.roadmap_link.url }}">{{ r.roadmap_link.label }} &rarr;</a>{% endif %}
     </header>
 
     <section>
