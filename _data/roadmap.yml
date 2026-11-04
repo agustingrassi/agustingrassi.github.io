@@ -8,6 +8,11 @@
 name: "Agustin Grassi"
 headline: "Industrial engineer pivoting to Product Management with a strong AI foundation."
 
+# The big button under the headline
+roadmap_link:
+  label: "See my full roadmap"
+  url: "/roadmap2/"
+
 # The topics you're learning. Add topics under each one.
 # status can be: done, in-progress, next
 learning:
@@ -23,6 +28,6 @@ learning:
 # Things you've built.
 projects:
   - name: "Roadmap page"
-    description: "This page. Built from scratch and published with GitHub Pages."
+    description: "My plan and progress toward product management, as a timeline. Built with Claude and published with GitHub Pages."
     date: "Nov 2026"
-    link: "https://agustingrassi.github.io"
+    link: "/roadmap2/"
